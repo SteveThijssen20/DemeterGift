@@ -210,7 +210,7 @@ export default function Donation() {
                                     }} eventid={listItem.eventId} date={listItem.Date} eventtitle={listItem.Title} className="card" onClick={activateCreateNFTModal}>
                                         <div eventid={listItem.eventId} date={listItem.Date} eventtitle={listItem.Title} className="card-body" style={{
                                             height: '100%',
-                                            paddingTop: '13%'
+                                            paddingTop: '34px'
                                         }}>
                                             Donate NFT
                                         </div>
@@ -227,7 +227,7 @@ export default function Donation() {
                                     }} eventid={listItem.eventId} onClick={activateCreateCryptopunkModal} date={listItem.Date} eventtitle={listItem.Title} className="card" >
                                         <div eventid={listItem.eventId} date={listItem.Date} eventtitle={listItem.Title} className="card-body" style={{
                                             height: '100%',
-                                            paddingTop: '13%'
+                                            paddingTop: '34px'
                                         }}>
                                             Donate Cryptopunk
                                         </div>
@@ -247,7 +247,7 @@ export default function Donation() {
 
                                             <div className="card-body" style={{
                                                 height: '100%',
-                                                paddingTop: '13%'
+                                                paddingTop: '34px'
                                             }}>
                                                 Go to auction
                                             </div>

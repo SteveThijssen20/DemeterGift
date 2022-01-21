@@ -27,6 +27,9 @@ export default (_: any, options: any): WebpackConfig => {
 
     config.entry = {
         index: path.resolve(__dirname, 'src/index'),
+        "donation/auction": path.resolve(__dirname, 'src/pages/donation/auction/index'),
+        "/donation": path.resolve(__dirname, 'src/pages/donation/index'),
+        "/pools": path.resolve(__dirname, 'src/pages/pools/index'),
     }
 
     /*
@@ -37,9 +40,7 @@ export default (_: any, options: any): WebpackConfig => {
 
     config.output = {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name]-[contenthash:6].js',
-        publicPath: '/',
-        clean: true,
+        filename: '[name].js'
     }
 
     /*
@@ -106,7 +107,7 @@ export default (_: any, options: any): WebpackConfig => {
             filename: path.resolve(__dirname, 'dist/index.html'),
             template: 'public/index.html',
             inject: false,
-        }),
+        })
     )
 
     if (isProduction) {
@@ -139,7 +140,7 @@ export default (_: any, options: any): WebpackConfig => {
     config.module = {
         rules: [
             {
-                test: /\.(ts|js)x?$/,
+                test: /\.(ts|tsx|js|jsx)?$/,
                 exclude: /node_modules/,
                 use: 'babel-loader',
             },
@@ -206,7 +207,7 @@ export default (_: any, options: any): WebpackConfig => {
             host: HOST,
             port: PORT,
             contentBase: [
-                path.join(__dirname + '/dist'),
+                path.resolve(__dirname + '/dist'),
             ],
             inline: hmrDisabled ? false : true,
             hot: hmrDisabled ? false : true,

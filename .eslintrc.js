@@ -192,7 +192,7 @@ const baseConfig = {
             ignoreCase: true,
         }],
         'react/jsx-filename-extension': ['warn', {
-            extensions: ['.js', '.jsx', '.tsx'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
         }],
         'react/jsx-indent': ['warn', 4],
         'react/jsx-indent-props': ['warn', 4],

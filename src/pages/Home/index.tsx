@@ -19,7 +19,7 @@ export default function Home() {
 			<div className="row">
 				<div style={{ 'width': '690px' }} className="col">
 					<div className="text-center">
-						<h4>DemeterGift uses the power of the Metis Layer 2 infrastructure to create the most easy, transparent, fun and digital charity auction on the web!</h4>
+						<h4>DemeterGift uses the power of the Everscale infrastructure to create the most easy, transparent, fun and digital charity auction on the web!</h4>
 					</div>
 				</div>
 			</div>

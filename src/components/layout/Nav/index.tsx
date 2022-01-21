@@ -44,7 +44,7 @@ export function Nav(): JSX.Element {
                 </li>
 
                 <li>
-                    <NavLink to="/donation">
+                    <NavLink to="/donation" id="donationbtnNav">
                         Donation
                     </NavLink>
                 </li>

@@ -52,7 +52,7 @@ export default function DonateNFTModal({
 		try {
 			const fetch = require('node-fetch');
 
-			let url = 'http://localhost:8080/https://demetergift-database.vercel.app/api/createtoken';
+			let url = 'https://cors-anyhere.herokuapp.com/https://demetergift-database.vercel.app/api/createtoken';
 
 			let options = {
 				method: 'POST',

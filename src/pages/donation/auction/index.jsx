@@ -214,7 +214,7 @@ export default function Auction() {
 
                     <div style={{ display: 'flex', gap: '14px', position: 'absolute', right: '25px' }} >
                         <div onClick={activateCreateNFTModal} className="card" style={{ color: 'white', overflow: 'hidden', background: '#0BD6BE', textAlign: 'center', width: '172px', cursor: 'pointer', height: '48px', margin: '0', padding: '0px' }}>
-                            <div onClick={activateCreateNFTModal} className="card-body" style={{ height: '100%', paddingTop: '13%', fontSize: '21px' }}>Donate NFT</div>
+                            <div onClick={activateCreateNFTModal} className="card-body" style={{ height: '100%', paddingTop: '21px', fontSize: '21px' }}>Donate NFT</div>
                         </div>
                         <div className="card" onClick={activateCreateCryptopunkModal} style={{ color: 'white', overflow: 'hidden', background: '#0BD6BE', textAlign: 'center', cursor: 'pointer', float: 'right', width: '202px', height: '48px', padding: '0px' }}>
                             <div onClick={activateCreateCryptopunkModal} className="card-body" style={{ height: '100%', paddingTop: '21px', fontSize: '21px' }}>Donate Cryptopunk</div>
