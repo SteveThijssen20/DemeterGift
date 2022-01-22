@@ -79,7 +79,10 @@ export default function Donation() {
             }
 
             setList(arr);
-            document.getElementById("Loading").style = "display:none";
+            if (document.getElementById("Loading")) {
+                document.getElementById("Loading").style = "display:none";
+            }
+
             console.log(arr);
         } catch (error) {
             console.error(error);
@@ -243,7 +246,7 @@ export default function Donation() {
                                         float: 'right',
                                         padding: '0',
                                     }} className="card" >
-                                        <NavLink to={`/donation/auction/${listItem.eventId}`}>
+                                        <NavLink to={`/donation/auction?${listItem.eventId}`}>
 
                                             <div className="card-body" style={{
                                                 height: '100%',

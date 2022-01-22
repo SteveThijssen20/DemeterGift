@@ -11,7 +11,8 @@ import ViewBidNFTModal from '../../../components/components/modals/ViewBidNFTMod
 import DonateNFTModal from '../../../components/components/modals/DonateNFTModal';
 
 export default function Auction() {
-    const { id } = useParams();
+    const id = window.location.search.replace("?", "")
+    console.log("id => ", id);
     const [CreatemodalShow, setDonateModalShow] = useState(false);
 
     const [eventId, setEventId] = useState(-1);
@@ -28,7 +29,7 @@ export default function Auction() {
     const [selecttitle, setselecttitle] = useState('');
     const [selecttype, setselecttype] = useState('');
     const [selectbid, setselectbid] = useState('');
-
+    const boolTrue = true;
     const [eventuri, setEventuri] = useState('');
     const [modalShow, setModalShow] = useState(false);
     const [ViewmodalShow, setViewModalShow] = useState(false);
@@ -58,10 +59,11 @@ export default function Auction() {
         var s = Math.floor((d % (1000 * 60)) / 1000);
         return (da.toString() + "d " + h.toString() + "h " + m.toString() + "m " + s.toString() + "s");
     }
-    async function fetchContractData() {
+    async function AuctionfetchContractData() {
 
-        if (id) {
-            while (true) {
+        if (id && window.location.pathname == "/donation/auction") {
+            console.log("started chekcing");
+            while (boolTrue) {
                 try {
                     setEventId(id);
                     const value = await eventgetbyid(id);
@@ -94,8 +96,6 @@ export default function Auction() {
 
 
                     setEventuri(value);
-
-
                     setTitle(value.title);
                     setgoalusd(formatter.format(Number(value.Goal * 0.371936)));
                     setgoal(Number(value.Goal));
@@ -109,11 +109,13 @@ export default function Auction() {
                 }
             }
 
+
+
         }
 
     }
     useEffect(() => {
-        fetchContractData();
+        AuctionfetchContractData();
 
     }, []);
 

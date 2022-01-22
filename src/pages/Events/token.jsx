@@ -1,16 +1,17 @@
 
 
-export async function tokengetbyeventid(id) {
+export async function tokengetbyeventid(eventid) {
     const fetch = require('node-fetch');
 
     let url = 'https://cors-anyhere.herokuapp.com/https://demetergift-database.vercel.app/api/tokensbyevent';
 
     let options = {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json, text/plain, */*'
         },
+        data: `{"id": ${eventid}}`
     };
     var allTokens;
     var booltrue = true;

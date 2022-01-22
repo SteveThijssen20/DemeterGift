@@ -101,8 +101,8 @@ export const appRoutes = {
     pairItem: new Route<{ poolAddress: string }>(
         '/pairs/:poolAddress',
     ),
-    auction: new Route<{ id: string }>(
-        '/donation/auction/:id',
+    auction: new Route(
+        '/donation/auction',
     ),
     farming: new Route(
         '/farming',

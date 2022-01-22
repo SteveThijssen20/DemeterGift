@@ -26,10 +26,9 @@ export default (_: any, options: any): WebpackConfig => {
      */
 
     config.entry = {
-        index: path.resolve(__dirname, 'src/index'),
-        "donation/auction": path.resolve(__dirname, 'src/pages/donation/auction/index'),
+        '/index': path.resolve(__dirname, 'src/index'),
         "/donation": path.resolve(__dirname, 'src/pages/donation/index'),
-        "/pools": path.resolve(__dirname, 'src/pages/pools/index'),
+        "/donation/auction": path.resolve(__dirname, 'src/pages/donation/auction/index'),
     }
 
     /*
@@ -40,7 +39,7 @@ export default (_: any, options: any): WebpackConfig => {
 
     config.output = {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].js',
     }
 
     /*
@@ -58,27 +57,10 @@ export default (_: any, options: any): WebpackConfig => {
         },
     } : {
         splitChunks: {
-            chunks: (chunk) => !/^(polyfills|pages|modules)$/.test(chunk.name),
             cacheGroups: {
-                vendor: {
-                    chunks: 'all',
-                    name: 'vendors',
-                    test: /(?<!node_modules.*)[\\/]node_modules[\\/]/,
-                    priority: 40,
-                    enforce: true,
-                },
-                common: {
-                    name: 'commons',
-                    test: /(common|layout|hooks|misc)/,
-                    minChunks: 1,
-                    priority: 30,
-                    reuseExistingChunk: true,
-                },
                 default: false,
                 vendors: false,
             },
-            maxInitialRequests: 10,
-            minSize: 30000,
         },
     }
 
@@ -105,6 +87,18 @@ export default (_: any, options: any): WebpackConfig => {
             title: 'Demtergift',
             favicon: 'public/favicon.ico',
             filename: path.resolve(__dirname, 'dist/index.html'),
+            template: 'public/index.html',
+            inject: false,
+        })
+        , new HtmlWebpackPlugin({
+            title: 'Demtergift - Donation',
+            filename: path.resolve(__dirname, 'dist/donation/index.html'),
+            template: 'public/index.html',
+            inject: false,
+        })
+        , new HtmlWebpackPlugin({
+            title: 'Demtergift - Auction',
+            filename: path.resolve(__dirname, 'dist/donation/auction/index.html'),
             template: 'public/index.html',
             inject: false,
         })
@@ -140,7 +134,7 @@ export default (_: any, options: any): WebpackConfig => {
     config.module = {
         rules: [
             {
-                test: /\.(ts|tsx|js|jsx)?$/,
+                test: /\.(ts|tsx|js|jsx)$/i,
                 exclude: /node_modules/,
                 use: 'babel-loader',
             },

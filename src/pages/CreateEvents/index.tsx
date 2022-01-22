@@ -24,7 +24,7 @@ export default function CreateEvents() {
 
             const id = await createEventAPI(EventTitle, EventDescription, EventDate, EventGoal, EventLogo);
             if (document.getElementById("plugin").checked) {
-                CreatePlugin(`https://${window.location.hostname}/donation/auction/${id}`);
+                CreatePlugin(`https://${window.location.hostname}/donation/auction?${id}`);
             }
 
             document.querySelectorAll('[href="/donation"]')[0].click()
